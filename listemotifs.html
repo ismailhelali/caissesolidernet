@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste Motif</title>
+<style>
+#myForm {
+  margin: 20px;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#myInput {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#dataContainer {
+  margin: 20px;
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#dataContainer p {
+  margin-bottom: 10px;
+}
+
+</style>
+</head>
+
+<body>
+<form id="myForm">
+  <input type="text" id="myInput">
+  <button type="submit">Submit</button>
+</form>
+
+<div id="dataContainer"></div>
+
+<script>
+var data = [];
+var form = document.getElementById("myForm");
+var dataContainer = document.getElementById("dataContainer");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  var input = document.getElementById("myInput").value;
+  data.push(input);
+  displayData();
+});
+
+function displayData() {
+  dataContainer.innerHTML = "";
+  for (var i = 0; i < data.length; i++) {
+    dataContainer.innerHTML += "<p>" + data[i] + "</p>";
+  }
+}
+</script>
+</body>
+<*html>
